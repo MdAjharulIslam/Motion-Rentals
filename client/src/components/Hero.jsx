@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { assets, cityList } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
 import { motion } from "motion/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Autoplay } from "swiper/modules";
+
 const Hero = () => {
   const [pickupLocation, setPickupLocation] = useState("");
 
@@ -33,15 +37,47 @@ const Hero = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="text-4xl md:text-5xl font-semibold"
       >
-        Drive in Style with Our Luxury Car Rentals
+        Step into Luxury, Comfort, and Style on the Road <br /> 
+        <span className="p-4 text-gray-600">with Our Luxury Car Rentals</span>
       </motion.h1>
+
+      
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="w-full max-w-5xl mx-auto"
+      >
+        <Swiper
+          modules={[Autoplay]}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          loop
+          spaceBetween={30}
+          slidesPerView={1}
+        >
+          <SwiperSlide>
+            <img src={assets.main_car} alt="car 1" className="w-full rounded-xl" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={assets.main_car2} alt="car 2" className="w-full rounded-xl" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={assets.main_car3} alt="car 3" className="w-full rounded-xl" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={assets.main_car4} alt="car 4" className="w-full rounded-xl" />
+          </SwiperSlide>
+        </Swiper>
+      </motion.div>
+
+      
       <motion.form
         initial={{ scale: 0.95, opacity: 0, y: 50 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
         onSubmit={handleSearch}
         className="flex flex-col md:flex-row items-start md:items-center justify-between
-    p-6 rounded-lg md:rounded-full w-full max-w-80 md:max-w-200 bg-white shadow-[0px_8px_20px_rgba(0,0,0,0.1)]"
+        p-6 rounded-lg md:rounded-full w-full max-w-80 md:max-w-200 bg-white shadow-[0px_8px_20px_rgba(0,0,0,0.1)]"
       >
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4 min-md:ml-8">
           <div className="flex flex-col items-start gap-2">
@@ -74,6 +110,7 @@ const Hero = () => {
               required
             />
           </div>
+
           <div className="flex flex-col items-start gap-2">
             <label htmlFor="return-date">Return Date</label>
             <input
@@ -92,22 +129,10 @@ const Hero = () => {
           whileTap={{ scale: 0.95 }}
           className="flex items-center justify-center gap-1 px-9 py-3 max-sm:mt-4 bg-primary hover:bg-primary-dull text-white rounded-full cursor-pointer"
         >
-          <img
-            src={assets.search_icon}
-            alt="search"
-            className="brightness-300"
-          />
+          <img src={assets.search_icon} alt="search" className="brightness-300" />
           Search
         </motion.button>
       </motion.form>
-      <motion.img
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        src={assets.main_car}
-        alt="car"
-        className="w-full max-w-5xl mx-auto"
-      />
     </motion.div>
   );
 };

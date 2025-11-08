@@ -8,7 +8,7 @@ const Footer = () => {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="px-6 md:px-16 lg:px-24 xl:px-32 mt-60 text-sm text-gray-500"
+      className="px-6 md:px-16 lg:px-24 xl:px-32 mt-60 text-sm text-gray-500 bg-gray-50 pt-5"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ const Footer = () => {
             transition={{ delay: 0.3, duration: 0.5 }}
             src={assets.logo}
             alt="logo"
-            className=" h-8 md:h-9"
+            className=" h-46 md:h-50"
           />
           <motion.p
             initial={{ opacity: 0 }}
