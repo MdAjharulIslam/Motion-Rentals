@@ -35,7 +35,7 @@ const Navbar = () => {
     transition={{duration: 0.5}}
       className={`h-16 sm:h-20 flex items-center justify-between 
       px-6 md:px-16 lg:px-24 xl:px-32 text-gray-600 
-      border-b border-borderColor relative transition-all shadow-2xl shadow-blue-300
+      border-b border-borderColor relative transition-all shadow-2xl shadow-blue-300 pb-4
       ${location.pathname === "/" ? "bg-light" : "bg-white"}`}
     >
       {/* Logo */}
