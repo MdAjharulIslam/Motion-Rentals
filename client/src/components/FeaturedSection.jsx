@@ -54,7 +54,7 @@ const FeaturedSection = () => {
           scrollTo(0, 0);
         }}
         className="flex items-center justify-center gap-2 px-6 py-2 border border-borderColor
-         hover:bg-gray-50 rounded-md mt-18 cursor-pointer shadow-2xl shadow-blue-600"
+         hover:bg-gray-50 rounded-md mt-18 cursor-pointer shadow-2xl "
       >
         Explore All Cars
         <img src={assets.arrow_icon} alt="arrow" />
