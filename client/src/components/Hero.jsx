@@ -29,24 +29,46 @@ const Hero = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="h-screen flex flex-col items-center justify-center gap-14 bg-light text-center"
+      className="h-screen flex flex-col items-center justify-center gap-14
+       bg-blue-50 text-center shadow-2xl shadow-blue-200 "
     >
       <motion.h1
-        initial={{ y: 50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-4xl md:text-5xl font-semibold"
-      >
-        Step into Luxury, Comfort, and Style on the Road <br /> 
-        <span className="p-4 text-gray-600">with Our Luxury Car Rentals</span>
-      </motion.h1>
+  initial={false} // never resets
+  animate={{
+    y: [0, -10, 0], // floating motion
+    opacity: 1,     // always visible
+  }}
+  transition={{
+    duration: 3,
+    repeat: Infinity,
+    repeatType: "mirror",
+    ease: "easeInOut",
+  }}
+  className="text-4xl md:text-5xl font-semibold bg-clip-text text-transparent"
+  style={{
+    backgroundImage: "linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899)", // blue → purple → pink
+    backgroundSize: "200% 200%",
+    animation: "gradientShift 6s ease infinite",
+    willChange: "transform",
+  }}
+>
+  Step into Luxury, Comfort, and Style on the Road <br />
+  <motion.span
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1, ease: "easeOut" }}
+    className="p-4 text-gray-600 dark:text-gray-300"
+  >
+    with Our Luxury Car Rentals
+  </motion.span>
+</motion.h1>
+
 
       
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="w-full max-w-5xl mx-auto"
+        className="w-full max-w-5xl mx-auto "
       >
         <Swiper
           modules={[Autoplay]}
@@ -77,7 +99,8 @@ const Hero = () => {
         transition={{ duration: 0.6, delay: 0.4 }}
         onSubmit={handleSearch}
         className="flex flex-col md:flex-row items-start md:items-center justify-between
-        p-6 rounded-lg md:rounded-full w-full max-w-80 md:max-w-200 bg-white shadow-[0px_8px_20px_rgba(0,0,0,0.1)]"
+        p-6 rounded-lg md:rounded-full w-full max-w-80 md:max-w-200
+         bg-white  shadow-2xl shadow-blue-300"
       >
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4 min-md:ml-8">
           <div className="flex flex-col items-start gap-2">

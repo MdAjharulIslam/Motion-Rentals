@@ -84,7 +84,7 @@ const Cars = () => {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", duration: 0.6 }}
-        className="flex flex-col items-center py-20 bg-light max-md:px-4"
+        className="flex flex-col items-center py-20 bg-light max-md:px-4 "
       >
         <Title
           title="Available Cars"
@@ -94,7 +94,7 @@ const Cars = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="flex items-center bg-white px-4 mt-6 max-w-xl w-full h-12 rounded-full shadow"
+          className="flex items-center bg-white px-4 mt-6 max-w-xl w-full h-12 rounded-full shadow-2xl shadow-blue-400"
         >
           <img src={assets.search_icon} alt="Search" className="w-5 h-5 mr-2" />
           <input

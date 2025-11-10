@@ -7,8 +7,9 @@ const CarCard = ({ car }) => {
   const navigate = useNavigate();
   return (
     
-      <div onClick={()=> {navigate(`/car-details/${car._id}`); scrollTo(0,0)}} className="group rounded-xl overflow-hidden shadow-lg hover:translate-y-1 transition-all duration-500 cursor-pointer">
-        <div className="relative h-48 overflow-hidden">
+      <div onClick={()=> {navigate(`/car-details/${car._id}`); scrollTo(0,0)}} className="group rounded-xl overflow-hidden  hover:translate-y-1 
+      transition-all duration-500 cursor-pointer shadow-2xl shadow-blue-300">
+        <div className="relative h-48 overflow-hidden shadow-2xl shadow-blue-100">
           <img
             src={car.image}
             alt="Car Image"

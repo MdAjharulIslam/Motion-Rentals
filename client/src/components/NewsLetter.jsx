@@ -30,7 +30,7 @@ const NewsLetter = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="flex items-center justify-between max-w-2xl w-full md:h-13 h-12"
+        className="flex items-center justify-between max-w-2xl w-full md:h-13 h-12 shadow-2xl shadow-blue-300"
       >
         <input
           className="border border-gray-300 rounded-md h-full border-r-0 outline-none w-full rounded-r-none px-3 text-gray-500"

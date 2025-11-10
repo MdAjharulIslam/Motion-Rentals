@@ -5,10 +5,17 @@
 *{
     font-family: "Outfit" , sans-serif ;
 }
+body {
+  @apply bg-blue-50 min-h-screen;
+}
 
 @theme {
     --color-primary: #2C3E50;
     --color-primary-dull: #2C3E80;
     --color-light: #F1F5F9;
     --color-borderColor: #c4c7d2;
+}
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }

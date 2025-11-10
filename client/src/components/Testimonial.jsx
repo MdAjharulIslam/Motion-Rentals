@@ -38,7 +38,7 @@ const Testimonial = () => {
         title="What Our Customers Say"
         subTitle="Discover why discerning travelers choose stayVenture for there luxery accommodations around the world."
       />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-18">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-18 ">
         {testimonials.map((testimonial, index) => (
           <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -48,7 +48,8 @@ const Testimonial = () => {
 
 
             key={index}
-            className="bg-white p-6 rounded-xl shadow-lg hover:translate-y-1 transition-all duration-500"
+            className="bg-white p-6 rounded-xl  hover:translate-y-1 
+            transition-all duration-500 shadow-2xl shadow-blue-300"
           >
             <div className="flex items-center gap-3">
               <img

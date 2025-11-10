@@ -15,14 +15,14 @@ const FeaturedSection = () => {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
-      className="flex flex-col items-center py-24 px-6 md:px-16 lg:px-24 xl:px-32"
+      className="flex flex-col items-center py-24 px-6 md:px-16 lg:px-24 xl:px-32 "
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        <Title
+        <Title className=''
           title="Featured Vehicals"
           subTitle="explore our selection of premium vehicals available for your next advanture"
         />
@@ -53,7 +53,8 @@ const FeaturedSection = () => {
           navigate("/cars");
           scrollTo(0, 0);
         }}
-        className="flex items-center justify-center gap-2 px-6 py-2 border border-borderColor hover:bg-gray-50 rounded-md mt-18 cursor-pointer"
+        className="flex items-center justify-center gap-2 px-6 py-2 border border-borderColor
+         hover:bg-gray-50 rounded-md mt-18 cursor-pointer shadow-2xl shadow-blue-600"
       >
         Explore All Cars
         <img src={assets.arrow_icon} alt="arrow" />

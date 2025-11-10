@@ -39,10 +39,10 @@ const CarDetails = () => {
   }, [id, cars]);
 
   return car ? (
-    <div className="px-6 md:px-16 lg:px-24 xl:px-32 mt-16">
+    <div className="px-6 md:px-16 lg:px-24 xl:px-32 mt-16 ">
       <button
         onClick={() => navigate(-1)}
-        className="flex items-center gap-2 mb-6 text-gray-500 cursor-pointer"
+        className="flex items-center gap-2 mb-6 text-gray-500 cursor-pointer "
       >
         <img src={assets.arrow_icon} alt="" className="rotate-180 opacity-65" />
         Back to all cars
@@ -135,7 +135,7 @@ const CarDetails = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
           onSubmit={handleSubmit}
-          className="shadow-lg h-max sticky top-18 rounded-xl p-6 space-y-6 text-gray-500"
+          className=" h-max sticky top-18 rounded-xl p-6 space-y-6 text-gray-500 shadow-2xl shadow-blue-300"
         >
           <p className="flex items-center justify-between text-2xl text-gray-800 font-semibold">
             {currency} {car.pricePerDay}
