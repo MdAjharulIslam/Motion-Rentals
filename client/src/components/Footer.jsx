@@ -24,7 +24,7 @@ const Footer = () => {
             transition={{ delay: 0.3, duration: 0.5 }}
             src={assets.logo}
             alt="logo"
-            className=" h-46 md:h-50"
+            className=" h-46 md:h-50 scale-200 transition"
           />
           <motion.p
             initial={{ opacity: 0 }}

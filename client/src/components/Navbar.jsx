@@ -40,7 +40,7 @@ const Navbar = () => {
     >
       {/* Logo */}
       <Link to="/">
-        <motion.img whileHover={{scale: 1.05}} src={assets.logo} alt="logo" className="h-56 min-w-full" />
+        <motion.img whileHover={{scale: 1.05}} src={assets.logo} alt="logo" className="h-56 min-w-full hover:scale-x-120 transition" />
       </Link>
 
       {/* Mobile Menu */}
@@ -53,12 +53,12 @@ const Navbar = () => {
         ${open ? "max-sm:translate-x-0" : "max-sm:translate-x-full"}`}
       >
         {menuLinks.map((link, index) => (
-          <Link key={index} to={link.path}>
+          <Link key={index} to={link.path} className="hover:scale-110 transition">
             {link.name}
           </Link>
         ))}
 
-        <div className="hidden lg:flex items-center text-sm gap-2 border border-borderColor px-3 rounded-full max-w-56">
+        <div className="hidden lg:flex items-center text-sm gap-2 border border-borderColor px-3 rounded-full max-w-56 hover:scale-105 transition">
           <input
             type="text"
             className="py-1.5 w-full bg-transparent outline-none placeholder-gray-500"
@@ -67,13 +67,13 @@ const Navbar = () => {
           <img src={assets.search_icon} alt="search" />
         </div>
 
-        <div className="flex max-sm:flex-col items-start sm:items-center gap-6">
-          <button onClick={() => isOwner ? navigate("/owner") : changeRole() } className="cursor-pointer">
+        <div className="flex max-sm:flex-col items-start sm:items-center gap-6  ">
+          <button onClick={() => isOwner ? navigate("/owner") : changeRole() } className="cursor-pointer hover:scale-110 transition">
            {isOwner ? "Dashboard" : "List cars" }
           </button>
           <button
             onClick={() => {user ? logout() : setShowLogin(true)}}
-            className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull transition-all text-white rounded-lg"
+            className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull transition-all text-white rounded-lg hover:scale-110 "
           >
             {user ? 'Logout' : 'Login'}
           </button>
