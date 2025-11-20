@@ -33,10 +33,10 @@ const Hero = () => {
        bg-blue-50 text-center shadow-2xl shadow-blue-200 "
     >
       <motion.h1
-  initial={false} // never resets
+  initial={false} 
   animate={{
-    y: [0, -10, 0], // floating motion
-    opacity: 1,     // always visible
+    y: [0, -10, 0], 
+    opacity: 1,    
   }}
   transition={{
     duration: 3,
@@ -44,11 +44,11 @@ const Hero = () => {
     repeatType: "mirror",
     ease: "easeInOut",
   }}
-  className="text-4xl md:text-5xl font-semibold bg-clip-text text-transparent"
+  className="text-4xl md:text-5xl font-semibold bg-clip-text text-transparent hover:scale-110 transition"
   style={{
-    backgroundImage: "linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899)", // blue → purple → pink
+    backgroundImage: "linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899)", 
     backgroundSize: "200% 200%",
-    animation: "gradientShift 6s ease infinite",
+    animation: "gradientShift 1s ease infinite",
     willChange: "transform",
   }}
 >
