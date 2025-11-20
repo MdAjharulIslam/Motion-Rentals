@@ -4,7 +4,7 @@ A full-stack MERN car rental platform that allows users to browse, book, and pay
 Built for performance, scalability, and modern design — perfect for showcasing on your resume or portfolio.
 
 Visit 👉 https://car-rental-rho-umber.vercel.app
-## [Note : 👉  You need Login to see the cars ] 
+
 🧭 Table of Contents
 
 Features

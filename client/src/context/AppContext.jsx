@@ -19,7 +19,7 @@ export const AppProvider = ({ children }) => {
   const [returnDate, setReturnDate] = useState("");
   const [cars, setCars] = useState([]);
 
-  //function to check if user is loged in
+  
   const fetchUser = async () => {
     try {
       const { data } = await axios.get("/api/user/data");
@@ -56,20 +56,17 @@ export const AppProvider = ({ children }) => {
     toast.success("You have been logout");
   };
 
- // useEffect to retrieve the token from localStorage
 useEffect(() => {
-  const token = localStorage.getItem("token");
-  if (token) {
-    axios.defaults.headers.common["Authorization"] = token;
-    setToken(token);
+  
     fetchCars();
-  }
+  
 }, []);
 
 
-  //useEffect to fetch user data when token is available
 
   useEffect(() => {
+
+    const token = localStorage.getItem("token");
     if (token) {
       axios.defaults.headers.common["Authorization"] = `${token}`;
       fetchUser();
