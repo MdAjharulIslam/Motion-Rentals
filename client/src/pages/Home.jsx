@@ -7,14 +7,17 @@ import Testimonial from '../components/Testimonial'
 import NewsLetter from '../components/NewsLetter'
 import Footer from '../components/Footer'
 import Cetagory from '../components/Cetagory';
+import Feature from '../components/Feature'
 
 
 const Home = () => {
   return (
     <div>
       <Hero />
+      
       <Cetagory/>
       <FeaturedSection />
+      <Feature />
       <Banner />
       <Testimonial />
       <NewsLetter />
