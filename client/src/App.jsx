@@ -14,6 +14,7 @@ import ManageBookings from './pages/owner/ManageBookings';
 import Login from './components/Login';
 import { Toaster} from 'react-hot-toast'
 import { useAppContext } from './context/AppContext';
+import Cetagory from './pages/Cetagory';
 
 const App = () => {
 const { showLogin} = useAppContext();
@@ -31,6 +32,7 @@ const { showLogin} = useAppContext();
   <Route path="/car-details/:id" element={<CarDetails />} />
   <Route path="/cars" element={<Cars />} />
   <Route path="/my-bookings" element={<MyBookings />} />
+  <Route path="/cetagory/:car" element={<Cetagory />} />
 
   {/* Parent route for owner layout */}
   <Route path="/owner" element={<Layout />}>

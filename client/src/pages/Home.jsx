@@ -6,12 +6,15 @@ import Banner from '../components/Banner'
 import Testimonial from '../components/Testimonial'
 import NewsLetter from '../components/NewsLetter'
 import Footer from '../components/Footer'
+import Cetagory from '../components/cetagory'
 
 const Home = () => {
   return (
     <div>
       <Hero />
+      <Cetagory/>
       <FeaturedSection />
+      
       <Banner />
       <Testimonial />
       <NewsLetter />
