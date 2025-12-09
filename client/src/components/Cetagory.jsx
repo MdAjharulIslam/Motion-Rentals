@@ -31,7 +31,7 @@ const Cetagory = () => {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className="grid grid-cols-4 sm:grid-cols-2 lg:grid-cols-4 pr-4 gap-8 mt-10 w-full"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pr-4 gap-8 mt-10 w-full"
       >
         {cetagoris.map((car, index) => (
           <motion.div

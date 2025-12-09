@@ -40,7 +40,7 @@ const Navbar = () => {
     >
       {/* Logo */}
       <Link to="/">
-        <motion.img whileHover={{scale: 1.05}} src={assets.logo} alt="logo" className="h-56 min-w-full hover:scale-x-120 transition" />
+        <motion.img whileHover={{scale: 1.05}} src={assets.logo} alt="logo" className="h-56 p-5 min-w-full hover:scale-x-120 transition" />
       </Link>
 
       {/* Mobile Menu */}
