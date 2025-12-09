@@ -14,7 +14,6 @@ const Home = () => {
       <Hero />
       <Cetagory/>
       <FeaturedSection />
-      
       <Banner />
       <Testimonial />
       <NewsLetter />
