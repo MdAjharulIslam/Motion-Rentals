@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Title from "./Title";
 import { assets, dummyCarData } from "../assets/assets";
 import CarCard from "./CarCard";
@@ -8,8 +8,16 @@ import { motion } from "motion/react";
 
 const FeaturedSection = () => {
   const navigate = useNavigate();
-
   const { cars } = useAppContext();
+  const [randomCars, setRandomCars] = useState([]);
+
+  useEffect(() => {
+    if (cars && cars.length > 0) {
+      const shuffled = [...cars].sort(() => 0.5 - Math.random());
+      setRandomCars(shuffled.slice(0, 6));
+    }
+  }, [cars]);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -22,18 +30,20 @@ const FeaturedSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        <Title className=''
-          title="Featured Vehicals"
-          subTitle="explore our selection of premium vehicals available for your next advanture"
+        <Title 
+          className=''
+          title="Featured Vehicles"
+          subTitle="explore our selection of premium vehicles available for your next adventure"
         />
       </motion.div>
+      
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-18 "
       >
-        {cars.slice(0, 6).map((car) => (
+        {randomCars.map((car) => (
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -51,10 +61,9 @@ const FeaturedSection = () => {
         transition={{ duration: 0.6, delay: 0.4 }}
         onClick={() => {
           navigate("/cars");
-          scrollTo(0, 0);
+          window.scrollTo(0, 0);
         }}
-        className="flex items-center justify-center gap-2 px-6 py-2 border border-borderColor
-         hover:bg-gray-50 rounded-md mt-18 cursor-pointer shadow-2xl "
+        className="flex items-center justify-center gap-2 px-6 py-2 border border-borderColor hover:bg-gray-50 rounded-md mt-18 cursor-pointer shadow-2xl "
       >
         Explore All Cars
         <img src={assets.arrow_icon} alt="arrow" />

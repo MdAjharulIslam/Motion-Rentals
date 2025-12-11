@@ -116,8 +116,17 @@ const Hero = () => {
 
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
+        animate={{
+          opacity: 1,
+          scale: [1, 1.05, 1], 
+        }}
+        transition={{
+          duration: 2, 
+          delay: 0.4, 
+          ease: "easeInOut",
+          repeat: Infinity, 
+          repeatType: "loop", 
+        }}
         className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white px-6 py-3 rounded-full shadow-lg"
       >
         <p className="text-sm md:text-base font-semibold flex items-center gap-2">
@@ -169,7 +178,6 @@ const Hero = () => {
         </Swiper>
       </motion.div>
 
-    
       {popularCities.length > 0 && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -197,73 +205,75 @@ const Hero = () => {
       )}
 
       <motion.form
-  initial={{ scale: 0.95, opacity: 0, y: 50 }}
-  animate={{ scale: 1, opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, delay: 0.4 }}
-  onSubmit={handleSearch}
-  className="flex flex-col md:flex-row items-center justify-between
+        initial={{ scale: 0.95, opacity: 0, y: 50 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        onSubmit={handleSearch}
+        className="flex flex-col md:flex-row items-center justify-between
     p-6 rounded-2xl md:rounded-full w-full max-w-4xl
     bg-white shadow-lg mx-auto gap-6"
->
-  <div className="flex flex-col md:flex-row items-center gap-6 w-full">
-
-    {/* Pickup Location */}
-    <div className="flex flex-col w-full md:w-auto">
-      <label className="text-sm font-medium text-gray-700">Pickup Location</label>
-      <select
-        required
-        value={pickupLocation}
-        onChange={(e) => setPickupLocation(e.target.value)}
-        className="px-4 py-2 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-blue-300"
       >
-        <option value="">Select Location</option>
-        {cars &&
-          [...new Set(cars.map((car) => car.location))]
-            .sort()
-            .map((city) => (
-              <option key={city}>{city}</option>
-            ))}
-      </select>
-    </div>
+        <div className="flex flex-col md:flex-row items-center gap-6 w-full">
+          {/* Pickup Location */}
+          <div className="flex flex-col w-full md:w-auto">
+            <label className="text-sm font-medium text-gray-700">
+              Pickup Location
+            </label>
+            <select
+              required
+              value={pickupLocation}
+              onChange={(e) => setPickupLocation(e.target.value)}
+              className="px-4 py-2 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-blue-300"
+            >
+              <option value="">Select Location</option>
+              {cars &&
+                [...new Set(cars.map((car) => car.location))]
+                  .sort()
+                  .map((city) => <option key={city}>{city}</option>)}
+            </select>
+          </div>
 
-    {/* Pickup Date */}
-    <div className="flex flex-col w-full md:w-auto">
-      <label className="text-sm font-medium text-gray-700">Pick-up Date</label>
-      <input
-        type="date"
-        value={pickupDate}
-        required
-        min={new Date().toISOString().split("T")[0]}
-        onChange={(e) => setPickupDate(e.target.value)}
-        className="px-4 py-2 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-blue-300"
-      />
-    </div>
+          {/* Pickup Date */}
+          <div className="flex flex-col w-full md:w-auto">
+            <label className="text-sm font-medium text-gray-700">
+              Pick-up Date
+            </label>
+            <input
+              type="date"
+              value={pickupDate}
+              required
+              min={new Date().toISOString().split("T")[0]}
+              onChange={(e) => setPickupDate(e.target.value)}
+              className="px-4 py-2 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-blue-300"
+            />
+          </div>
 
-    {/* Return Date */}
-    <div className="flex flex-col w-full md:w-auto">
-      <label className="text-sm font-medium text-gray-700">Return Date</label>
-      <input
-        type="date"
-        value={returnDate}
-        required
-        min={pickupDate || new Date().toISOString().split("T")[0]}
-        onChange={(e) => setReturnDate(e.target.value)}
-        className="px-4 py-2 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-blue-300"
-      />
-    </div>
-  </div>
+          {/* Return Date */}
+          <div className="flex flex-col w-full md:w-auto">
+            <label className="text-sm font-medium text-gray-700">
+              Return Date
+            </label>
+            <input
+              type="date"
+              value={returnDate}
+              required
+              min={pickupDate || new Date().toISOString().split("T")[0]}
+              onChange={(e) => setReturnDate(e.target.value)}
+              className="px-4 py-2 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-blue-300"
+            />
+          </div>
+        </div>
 
-  {/* Button */}
-  <motion.button
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    className="flex items-center gap-2 px-10 py-3 bg-primary text-white rounded-full shadow-md hover:bg-primary-dull w-full md:w-auto"
-  >
-    <img src={assets.search_icon} className="w-5 h-5 brightness-300" />
-    Search
-  </motion.button>
-</motion.form>
-
+        {/* Button */}
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="flex items-center gap-2 px-10 py-3 bg-primary text-white rounded-full shadow-md hover:bg-primary-dull w-full md:w-auto"
+        >
+          <img src={assets.search_icon} className="w-5 h-5 brightness-300" />
+          Search
+        </motion.button>
+      </motion.form>
 
       {pickupDate && returnDate && cars && availableCars > 0 && (
         <motion.div
@@ -281,7 +291,5 @@ const Hero = () => {
     </motion.div>
   );
 };
-
-
 
 export default Hero;

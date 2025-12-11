@@ -37,7 +37,7 @@ const StatCard = ({ number, suffix = "", label, delay = 0 }) => {
   sm:hover:scale-110
   md:hover:scale-125
   lg:hover:scale-150
-  xl:hover:scale-200 "
+  xl:hover:scale-200  hover:bg-blue-50"
     >
       <h3 className="text-3xl md:text-4xl font-bold text-primary">
         {count.toLocaleString()}
